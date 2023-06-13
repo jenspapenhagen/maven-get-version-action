@@ -1,8 +1,8 @@
 name: 'Get current pom version of project'
 description: 'Get the current version of the pom package using maven evaluate'
 branding:
-  color: 'gray-dark'
-  icon: 'align-center'
+  color: 'green'
+  icon: 'git-branch'
 inputs:
   path:
     required: false
