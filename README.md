@@ -8,7 +8,7 @@ To use this action in your project, use the following:
 ```yaml
 - name: get-pom-version
   id: pom-version
-  uses: CptMokoena/maven-get-version-action@master
+  uses: CptMokoena/maven-get-version-action@main
 ```
 
 The Action sets an output variable called `version` which can be used in a following step by using `${{ steps.pom-version.outputs.version }}`.
@@ -18,7 +18,7 @@ If you are using a monorepo or otherwise have some packages in a subdirectory of
 ```yaml
 - name: get-pom-version
   id: pom-version
-  uses: CptMokoena/maven-get-version-action@master
+  uses: CptMokoena/maven-get-version-action@main
   with:
     path: mavenproject/<yourproject>
 ```
