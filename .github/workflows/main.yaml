@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  test-maven-get-version:
+    runs-on: ubuntu-latest
+    name: Job to test the maven get version action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get maven project version from pom
+        id: get-mvn-version
+        uses: ./
+        with:
+          path: 'example'
+      - name: Print output version
+        run: echo "Maven project version is ${{ steps.get-mvn-version.outputs.version }}"
