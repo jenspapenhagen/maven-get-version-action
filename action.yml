@@ -7,7 +7,11 @@ inputs:
   path:
     required: false
     default: '.'
-    description: 'Path to pom.xml file (directories only), e.g. mavenproject/<yourproject>'
+    description: 'Path to pom.xml file (directories only), e.g. "mavenproject/<yourproject>"'
+  args:
+    required: false
+    default: '.'
+    description: 'Additional maven command args to run, e.g. "-DskipTests"'
 outputs:
   version:
     description: 'Current version defined in the pom.xml file'
@@ -16,3 +20,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.path }}
+    - ${{ inputs.args }}

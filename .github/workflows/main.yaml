@@ -12,5 +12,6 @@ jobs:
         uses: ./
         with:
           path: 'example'
+          args: '-DskipTests'
       - name: Print output version
         run: echo "Maven project version is ${{ steps.get-mvn-version.outputs.version }}"
