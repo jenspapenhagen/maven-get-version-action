@@ -3,9 +3,17 @@
 This GitHub Action retrieves the pom version from the pom.xml file and sets the full version in the `version` 
 output value usable in your workflow file which can be used in a following step by using `${{ steps.pom-version.outputs.version }}`. 
 
+
+Part of the pom.xml file:
+
+```xml
+<version>1.2.3-SNAPSHOT</version>
+```
+We can extract all Parts of the Version Number, with "-SNAPSHOT" clean up.
+
 [More Examples](#example)
 
-## This GitHub Action uses the semver schema
+## This GitHub Action support the semver schema
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 

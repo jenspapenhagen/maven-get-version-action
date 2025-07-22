@@ -18,6 +18,6 @@ MINOR_BASH="echo $POM_VERSION | cut -d. -f2"
 POM_MINOR=$(eval "$MINOR_BASH")
 echo "minor=$POM_MINOR" >> "$GITHUB_OUTPUT"
 
-PATCH_BASH="echo $POM_VERSION | cut -d. -f3"
+PATCH_BASH="echo $POM_VERSION | cut -d. -f3 | sed 's/[^[:digit:]]\+//g'"
 POM_PATCH=$(eval "$PATCH_BASH")
 echo "patch=$POM_PATCH" >> "$GITHUB_OUTPUT"
