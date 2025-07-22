@@ -1,4 +1,4 @@
-name: 'Get current pom version of project'
+name: 'Get current version of a maven project'
 description: 'Get the current version of the pom package using maven evaluate'
 branding:
   color: 'green'
