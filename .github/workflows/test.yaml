@@ -1,0 +1,35 @@
+name: Test CI - Get Maven Version GitHub Action
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  test-maven-get-version:
+    name: Job to test the maven get version action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+         fetch-depth: 0
+
+      - name: Get maven project version from pom
+        id: get-mvn-version
+        uses: ./
+        with:
+          path: 'example'
+          args: '-DskipTests'
+
+      - name: Print output full version
+        run: echo "Maven project version is ${{ steps.get-mvn-version.outputs.version }}"
+
+      - name: Print output major version
+        run: echo "Maven project major version is ${{ steps.get-mvn-version.outputs.major }}"
+
+      - name: Print output minor version
+        run: echo "Maven project minor version is ${{ steps.get-mvn-version.outputs.minor }}"
+
+      - name: Print output patch version
+        run: echo "Maven project patch version is ${{ steps.get-mvn-version.outputs.patch }}"
