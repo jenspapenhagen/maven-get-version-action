@@ -1,4 +1,4 @@
-FROM maven:3.9.11-eclipse-temurin-21-alpine
+FROM maven:3-eclipse-temurin-24-alpine
 
 COPY ./entrypoint.sh /
 
