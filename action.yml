@@ -15,6 +15,12 @@ inputs:
 outputs:
   version:
     description: 'Current version defined in the pom.xml file'
+  major:
+    description: 'Current major version defined in the pom.xml file'
+  minor:
+    description: 'Current minor version defined in the pom.xml file'
+  patch:
+    description: 'Current patch version defined in the pom.xml file'
 runs:
   using: 'docker'
   image: 'Dockerfile'
