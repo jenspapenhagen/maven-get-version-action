@@ -1,0 +1,7 @@
+changelog:
+  exclude:
+    labels:
+      - ":chart_with_upwards_trend: dependency-update"
+    authors:
+      - dependabot
+      - import
