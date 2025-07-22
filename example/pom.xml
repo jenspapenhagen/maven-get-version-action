@@ -5,6 +5,6 @@
     <groupId>com.jenspapenhagen.action</groupId>
     <artifactId>test-mvn-project</artifactId>
 
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
 
 </project>
