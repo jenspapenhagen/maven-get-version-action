@@ -2,7 +2,12 @@
 POM_PATH="${1-.}"
 MAVEN_ADDITIONAL_ARGS="${2-.}"
 
-MAVEN_CMD="mvn -f $POM_PATH/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
+if [ -z "${POM_PATH}" ]; 
+then
+    MAVEN_CMD="mvn help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
+else
+    MAVEN_CMD="mvn -f $POM_PATH/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
+fi
 
 echo "Running '$MAVEN_CMD' ..."
 POM_VERSION=$(eval "$MAVEN_CMD")
