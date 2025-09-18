@@ -6,11 +6,11 @@ branding:
 inputs:
   path:
     required: false
-    default: '.'
+    default: ''
     description: 'Path to pom.xml file (directories only), e.g. "mavenproject/<yourproject>"'
   args:
     required: false
-    default: '.'
+    default: ''
     description: 'Additional maven command args to run, e.g. "-DskipTests"'
 outputs:
   version:
