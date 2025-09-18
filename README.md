@@ -31,7 +31,7 @@ To use this action in your project, use the following:
 ```yaml
 - name: get-pom-version
   id: pom-version
-  uses: jenspapenhagen/maven-get-version-action@v3.0.0
+  uses: jenspapenhagen/maven-get-version-action@v1.0.3
 
 - name: Print Maven POM project version
   run: echo "version = ${{ steps.pom-version.outputs.version }}"
@@ -51,7 +51,7 @@ To use this action in your project, use the following:
 ```yaml
 - name: get-pom-version
   id: pom-version
-  uses: jenspapenhagen/maven-get-version-action@v3.0.0
+  uses: jenspapenhagen/maven-get-version-action@v1.0.3
   with:
     path: "mavenproject/<yourproject>"  # Optional: pom.xml relative folder path (exclude "/pom.xml" in the path)
     args: "-s ~/.m2/settings.xml"       # Optional: maven additional args to run 
