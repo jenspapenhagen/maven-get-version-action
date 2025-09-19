@@ -10,7 +10,7 @@ else
     $ARGS = ${MAVEN_ADDITIONAL_ARGS}
 fi
 
-if [ ${POM_PATH} = '.' ]; 
+if [ ${POM_PATH} = '.' ];
 then
     echo "Load pom.xml directlry"
     MAVEN_CMD="mvn help:evaluate -Dexpression=project.version -q -DforceStdout $ARGS"
@@ -32,3 +32,7 @@ echo "major=$POM_MAJOR" >> "$GITHUB_OUTPUT"
 MINOR_BASH="echo $POM_VERSION | cut -d. -f2"
 POM_MINOR=$(eval "$MINOR_BASH")
 echo "minor=$POM_MINOR" >> "$GITHUB_OUTPUT"
+
+PATCH_BASH="echo $POM_VERSION | cut -d. -f3 | sed 's/[^[:digit:]]\+//g'"
+POM_PATCH=$(eval "$PATCH_BASH")
+echo "patch=$POM_PATCH" >> "$GITHUB_OUTPUT"
