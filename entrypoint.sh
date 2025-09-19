@@ -7,7 +7,7 @@ if [ ${MAVEN_ADDITIONAL_ARGS} = '.' ];
 then
     echo "no additional args found"
 else
-    $ARGS = ${MAVEN_ADDITIONAL_ARGS}
+    $ARGS="${MAVEN_ADDITIONAL_ARGS}"
 fi
 
 if [ ${POM_PATH} = '.' ];
@@ -19,7 +19,7 @@ else
     MAVEN_CMD="mvn -f $POM_PATH/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout $ARGS"
 fi
 
-echo "Running ${MAVEN_CMD} ..."
+echo "Running ${MAVEN_CMD}"
 POM_VERSION=$(eval "$MAVEN_CMD")
 
 echo "Founded version ${POM_VERSION}"
