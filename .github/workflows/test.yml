@@ -20,7 +20,6 @@ jobs:
         uses: ./
         with:
           path: './example'
-          args: '-Dmaven.test.skip=true'
 
       - name: Print output full version
         run: echo "Maven project version is ${{ steps.get-mvn-version.outputs.version }}"
