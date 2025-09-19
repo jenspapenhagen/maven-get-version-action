@@ -4,12 +4,14 @@ MAVEN_ADDITIONAL_ARGS="${2-.}"
 
 if [ -z "${POM_PATH}" ]; 
 then
+    echo "Load pom.xml directlry"
     MAVEN_CMD="mvn help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
 else
+    echo "Load pom.xml with path: " ${POM_PATH}
     MAVEN_CMD="mvn -f $POM_PATH/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
 fi
 
-echo "Running '$MAVEN_CMD' ..."
+echo "Running ${MAVEN_CMD} ..."
 POM_VERSION=$(eval "$MAVEN_CMD")
 
 echo "Founded version ${POM_VERSION}"
