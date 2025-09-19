@@ -1,13 +1,9 @@
-FROM maven:3-eclipse-temurin-24-alpine
+FROM maven:3-eclipse-temurin-21-alpine
 
 WORKDIR /app
 
-RUN adduser maven -D
+COPY entrypoint.sh ./entrypoint.sh
 
-USER maven
+RUN chmod +x entrypoint.sh
 
-COPY --chown=maven:maven entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
