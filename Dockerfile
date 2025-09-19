@@ -2,7 +2,9 @@ FROM maven:3-eclipse-temurin-24-alpine
 
 WORKDIR /app
 
-COPY ./entrypoint.sh .
+USER seluser
+
+COPY --chown=seluser:seluser entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
