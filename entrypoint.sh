@@ -2,7 +2,7 @@
 POM_PATH="${1-.}"
 MAVEN_ADDITIONAL_ARGS="${2-.}"
 
-if [ -z "${POM_PATH}" ]; 
+if [ ${POM_PATH} = '.']; 
 then
     echo "Load pom.xml directlry"
     MAVEN_CMD="mvn help:evaluate -Dexpression=project.version -q -DforceStdout $MAVEN_ADDITIONAL_ARGS"
