@@ -1,6 +1,8 @@
 FROM maven:3-eclipse-temurin-24-alpine
 
-COPY ./entrypoint.sh /
+WORKDIR /app
+
+COPY ./entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
