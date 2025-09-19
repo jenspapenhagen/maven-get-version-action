@@ -18,8 +18,8 @@ jobs:
       - name: Get maven project version from pom
         id: get-mvn-version
         uses: ./
+        working-directory: ./example
         with:
-          path: 'example'
           args: '-DskipTests'
 
       - name: Print output full version
